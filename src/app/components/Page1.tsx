@@ -186,14 +186,14 @@ const Page1 = () => {
                     view == 'addtodo' &&    
                     <>
                     
-                    <div className='w-[100%] flex  justify-center items-center pt-10 gap-5'>
+                    <div className='w-[100%] flex justify-center items-center pt-10 gap-5'>
                         <div className='flex flex-col gap-5'>
-                            <div className='text-xl'>Title:</div>
-                            <div className='text-xl'>Description:</div>    
+                            <div className='text-sm md:text-xl'>Title:</div>
+                            <div className='text-sm md:text-xl'>Description:</div>    
                         </div>
                         <div className='flex flex-col gap-5' >
-                            <input type="text" className='text-xl  shadow-lg shadow-slate-300 rounded-lg p-2 pt-1 pb-1' onChange={(el)=>{settodo(el.target.value,description,false)}} placeholder='Enter the title...' />
-                            <input type="text" className='text-xl shadow-lg shadow-slate-300 rounded-lg p-2 pt-1 pb-1' onChange={(el)=>{settodo(title,el.target.value,false)}} placeholder='Enter the Description...' />
+                            <input type="text" className='text-sm md:text-xl  shadow-lg shadow-slate-300 rounded-lg p-2 pt-1 pb-1' onChange={(el)=>{settodo(el.target.value,description,false)}} placeholder='Enter the title...' />
+                            <input type="text" className='text-sm md:text-xl shadow-lg shadow-slate-300 rounded-lg p-2 pt-1 pb-1' onChange={(el)=>{settodo(title,el.target.value,false)}} placeholder='Enter the Description...' />
                         </div>
                     </div>  
                         
@@ -219,12 +219,12 @@ const Page1 = () => {
                     
                     <div className='w-[100%] flex  justify-center items-center pt-10 gap-5'>
                         <div className='flex flex-col gap-5'>
-                            <div className='text-xl'>Title:</div>
-                            <div className='text-xl'>Description:</div>    
+                            <div className='text-sm md:text-xl'>Title:</div>
+                            <div className='text-sm md:text-xl'>Description:</div>    
                         </div>
                         <div className='flex flex-col gap-5' >
-                            <input type="text" value={title} className='text-xl  shadow-lg shadow-slate-300 rounded-lg p-2 pt-1 pb-1' onChange={(el)=>{settodo(el.target.value,description,completed)}} placeholder='Enter the title...' />
-                            <input type="text" value={description}  className='text-xl shadow-lg shadow-slate-300 rounded-lg p-2 pt-1 pb-1' onChange={(el)=>{settodo(title,el.target.value,completed)}} placeholder='Enter the Description...' />
+                            <input type="text" value={title} className='text-sm md:text-xl  shadow-lg shadow-slate-300 rounded-lg p-2 pt-1 pb-1' onChange={(el)=>{settodo(el.target.value,description,completed)}} placeholder='Enter the title...' />
+                            <input type="text" value={description}  className='text-sm md:text-xl shadow-lg shadow-slate-300 rounded-lg p-2 pt-1 pb-1' onChange={(el)=>{settodo(title,el.target.value,completed)}} placeholder='Enter the Description...' />
                         </div>
                     </div>  
                         
