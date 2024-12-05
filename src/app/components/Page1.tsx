@@ -121,16 +121,14 @@ const Page1 = () => {
                             datearr.map(function(el,index){
                                 let bgcolor = "bg-white";
                                 let fontcolor = "text-black";
-                                let disabled:boolean = false;
                                 if(color[index] == 1){
                                     bgcolor = "bg-black"
                                     fontcolor = "text-white"
                                 }
                                 if(index > new Date().getDay()){
-                                    disabled = true;
                                     fontcolor = "text-gray-500"
                                 }
-                                return <DateComponent key={index} id={index} day={el.day} date={el.date} getcolor={getcolor} color={bgcolor} disabled = {disabled} fontcolor={fontcolor} ></DateComponent>
+                                return <DateComponent key={index} id={index} day={el.day} date={el.date} getcolor={getcolor} color={bgcolor} fontcolor={fontcolor} ></DateComponent>
                             })
                         }
                     </div>
@@ -253,15 +251,14 @@ type Date = {
     fontcolor:string,
     color:string,
     id:number,
-    disabled:boolean
     getcolor:(event:React.MouseEvent<HTMLButtonElement>)=>void
 }
 
 // component for the date options on the top with customize able color and font color
-function DateComponent({day,date,fontcolor,color,id,disabled,getcolor}:Date){
+function DateComponent({day,date,fontcolor,color,id,getcolor}:Date){
 
     return (
-        <button disabled={disabled} onClick={getcolor} id = {`${id}`} className={`h-16 w-10 ${color}  rounded-xl flex-col flex items-center justify-center`}>
+        <button onClick={getcolor} id = {`${id}`} className={`h-16 w-10 ${color}  rounded-xl flex-col flex items-center justify-center`}>
             <div className={`${fontcolor} font-bold`}>{day}</div>
             <div className={`${fontcolor} font-bold`}>{date}</div>
         </button>
