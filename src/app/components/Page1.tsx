@@ -15,10 +15,11 @@ const Page1 = () => {
     const {title, description,completed, settodo} = todostore()
     const {todos, id, settodos} = todosstore()
 
-    // usestate hooks
+    // usestate hooks   
     const [pageid, setpageid] = useState(new Date().getDate())
     const [editid, seteditid] = useState(0)
 
+    let day = new Date().getDay()
     // to load the todos from the local storage
     useEffect(function(){
         let todostring:string | null = localStorage.getItem(`${pageid}`)
@@ -55,7 +56,7 @@ const Page1 = () => {
         }
         setcolor(colorarr)
         return arr
-    },[new Date().getDate()])
+    },[day])
 
     // runs when you click on the day nav at the top
     function getcolor(event:React.MouseEvent<HTMLButtonElement>){
@@ -121,11 +122,12 @@ const Page1 = () => {
                             datearr.map(function(el,index){
                                 let bgcolor = "bg-white";
                                 let fontcolor = "text-black";
+                                
                                 if(color[index] == 1){
                                     bgcolor = "bg-black"
                                     fontcolor = "text-white"
                                 }
-                                if(index > new Date().getDay()){
+                                if(index > day ){
                                     fontcolor = "text-gray-500"
                                 }
                                 return <DateComponent key={index} id={index} day={el.day} date={el.date} getcolor={getcolor} color={bgcolor} fontcolor={fontcolor} ></DateComponent>
